@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background: linear-gradient(135deg, #f6f8ff 0%, #e9ecf9 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 32px;
+  box-shadow: 0 20px 40px rgba(91, 77, 251, 0.08);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: #8f92a1;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #16171d;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.progress-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: conic-gradient(#5b4dfb calc(var(--percent, 0) * 1%), #f0f2fe 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: #5b4dfb;
+  position: relative;
+}
+
+.progress-circle::before {
+  content: '';
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+.progress-circle span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Stats Card */
+.stats-card {
+  background: linear-gradient(135deg, #f0f2fe 0%, #e6e9ff 100%);
+  padding: 18px 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.stats-card p {
+  color: #16171d;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.badge {
+  background: #ffffff;
+  color: #5b4dfb;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(91, 77, 251, 0.1);
+}
+
+/* Add Task Bar */
+.add-task-card {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: #f8f9fe;
+  padding: 6px;
+  border-radius: 18px;
+  border: 1px solid #eef0f8;
+}
+
+input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: #16171d;
+}
+
+button#addBtn {
+  background: linear-gradient(135deg, #6c5ce7 0%, #5b4dfb 100%);
+  color: white;
+  border: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(91, 77, 251, 0.25);
+}
+
+button#addBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(91, 77, 251, 0.35);
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 20px;
+  background: #f8f9fe;
+  padding: 4px;
+  border-radius: 14px;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: transparent;
+  color: #8f92a1;
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #ffffff;
+  color: #5b4dfb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Task List Elements */
+ul { list-style: none; }
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid #f0f2fe;
+  margin-bottom: 12px;
+  border-radius: 18px;
+  animation: fadeIn 0.3s ease;
+}
+
+li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+  border-color: #e0e4ff;
+}
+
+li span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d3142;
+  cursor: pointer;
+}
+
+li span.completed {
+  text-decoration: line-through;
+  color: #a0a4b8;
+}
+
+.delete-btn {
+  background: #fff0f0;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+  background: #ffe0e0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
